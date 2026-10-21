@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Es Lilin Aa Sio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🍦 Es Lilin Aa Sio
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+
+            <button class="cart-btn" onclick="openCart()">
+                🛒 Keranjang
+                <span id="cartCount">0</span>
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                🍦 Segar • Enak • Terjangkau
+            </span>
+
+            <h1>
+                Es Lilin <span>Aa Sio</span>
+            </h1>
+
+            <p>
+                Nikmati kesegaran Es Lilin Aa Sio dengan
+                berbagai pilihan rasa favorit. Cocok
+                dinikmati kapan saja!
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#produk" class="btn primary">
+                    Pesan Sekarang
+                </a>
+
+                <a href="#tentang" class="btn secondary">
+                    Tentang Kami
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUK
+    ========================== -->
+    <section class="products-section" id="produk">
+
+        <div class="container">
+
+            <div class="section-title">
+                <p class="subtitle">MENU KAMI</p>
+                <h2>Varian Es Lilin</h2>
+                <p>
+                    Pilih rasa favoritmu dan tambahkan
+                    langsung ke keranjang.
+                </p>
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔍 Cari rasa es lilin..."
+                    onkeyup="searchProduct()"
+                >
+
+            </div>
+
+
+            <!-- PRODUCT GRID -->
+            <div class="product-grid" id="productGrid">
+
+
+                <!-- COKLAT -->
+                <div class="product-card" data-name="coklat">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/coklat.png"
+                            alt="Es Lilin Coklat"
+                        >
+
+                        <span class="product-badge">
+                            Favorit
+                        </span>
+
+                    </div>
+
+                    <div class="product-content">
+
+                        <h3>🍫 Coklat</h3>
+
+                        <p>
+                            Es lilin dengan rasa coklat
+                            manis, creamy, dan lembut.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <div class="price">
+                                Rp3.000
+                            </div>
+
+                            <button
+                                onclick="addToCart('Coklat', 3000)"
+                            >
+                                + Tambah
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STRAWBERRY -->
+                <div
+                    class="product-card"
+                    data-name="strawberry"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/strawberry.png"
+                            alt="Es Lilin Strawberry"
+                        >
+
+                    </div>
+
+                    <div class="product-content">
+
+                        <h3>🍓 Strawberry</h3>
+
+                        <p>
+                            Rasa strawberry manis dan
+                            segar yang cocok dinikmati
+                            saat cuaca panas.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <div class="price">
+                                Rp3.000
+                            </div>
+
+                            <button
+                                onclick="addToCart('Strawberry', 3000)"
+                            >
+                                + Tambah
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ALPUKAT -->
+                <div
+                    class="product-card"
+                    data-name="alpukat"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/alpukat.png"
+                            alt="Es Lilin Alpukat"
+                        >
+
+                    </div>
+
+                    <div class="product-content">
+
+                        <h3>🥑 Alpukat</h3>
+
+                        <p>
+                            Perpaduan rasa alpukat yang
+                            creamy, lembut, dan nikmat.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <div class="price">
+                                Rp3.000
+                            </div>
+
+                            <button
+                                onclick="addToCart('Alpukat', 3000)"
+                            >
+                                + Tambah
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MANGGA -->
+                <div
+                    class="product-card"
+                    data-name="mangga"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/mangga.png"
+                            alt="Es Lilin Mangga"
+                        >
+
+                        <span class="product-badge new">
+                            Segar
+                        </span>
+
+                    </div>
+
+                    <div class="product-content">
+
+                        <h3>🥭 Mangga</h3>
+
+                        <p>
+                            Rasa mangga tropis yang manis,
+                            segar, dan menyegarkan.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <div class="price">
+                                Rp3.000
+                            </div>
+
+                            <button
+                                onclick="addToCart('Mangga', 3000)"
+                            >
+                                + Tambah
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KEUNGGULAN
+    ========================== -->
+    <section class="features">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <p class="subtitle">
+                    KENAPA AA SIO?
+                </p>
+
+                <h2>
+                    Segarnya Bikin Nagih!
+                </h2>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🍦
+                    </div>
+
+                    <h3>Banyak Pilihan</h3>
+
+                    <p>
+                        Tersedia berbagai varian rasa
+                        favorit untuk kamu pilih.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        💰
+                    </div>
+
+                    <h3>Harga Terjangkau</h3>
+
+                    <p>
+                        Nikmati es lilin enak tanpa
+                        membuat kantong jebol.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🛒
+                    </div>
+
+                    <h3>Mudah Dipesan</h3>
+
+                    <p>
+                        Pilih produk dan pesan
+                        langsung melalui website.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🛵
+                    </div>
+
+                    <h3>Bisa Diantar</h3>
+
+                    <p>
+                        Pesanan dapat diantar ke
+                        alamat pelanggan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TENTANG
+    ========================== -->
+    <section class="about-section" id="tentang">
+
+        <div class="container about-container">
+
+            <div class="about-image">
+
+                <img
+                    src="images/coklat.png"
+                    alt="Es Lilin Aa Sio"
+                >
+
+            </div>
+
+            <div class="about-content">
+
+                <p class="subtitle">
+                    TENTANG KAMI
+                </p>
+
+                <h2>
+                    Es Lilin Aa Sio
+                </h2>
+
+                <p>
+                    Es Lilin Aa Sio menyediakan
+                    berbagai pilihan es lilin dengan
+                    rasa yang lezat dan menyegarkan.
+                </p>
+
+                <p>
+                    Kami menghadirkan empat varian
+                    utama yaitu Coklat, Strawberry,
+                    Alpukat, dan Mangga dengan harga
+                    yang terjangkau.
+                </p>
+
+                <div class="about-points">
+
+                    <span>✓ Rasa enak</span>
+                    <span>✓ Harga terjangkau</span>
+                    <span>✓ Mudah dipesan</span>
+                    <span>✓ Banyak pilihan</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KONTAK
+    ========================== -->
+    <section class="contact-section" id="kontak">
+
+        <div class="container">
+
+            <div class="section-title white">
+
+                <p class="subtitle">
+                    HUBUNGI KAMI
+                </p>
+
+                <h2>
+                    Mau Pesan Es Lilin?
+                </h2>
+
+                <p>
+                    Tambahkan produk ke keranjang
+                    kemudian lakukan checkout.
+                </p>
+
+            </div>
+
+            <div class="contact-info">
+
+                <div>
+                    <span>📱</span>
+                    <h3>WhatsApp</h3>
+                    <p>081391351783</p>
+                </div>
+
+                <div>
+                    <span>📍</span>
+                    <h3>Alamat</h3>
+                    <p>Perumahan Cahaya Weleri Asri Blok E16 RT 02 RW 18, Penyangkringan, Kec. Weleri, Kab. Kendal</p>
+                </div>
+
+                <div>
+                    <span>🕐</span>
+                    <h3>Jam Buka</h3>
+                    <p>08.00 - 20.00 WIB</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>🍦 Es Lilin Aa Sio</h3>
+
+            <p>
+                Segarnya Bikin Nagih!
+            </p>
+
+            <p class="copyright">
+                © 2026 Es Lilin Aa Sio.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         OVERLAY
+    ========================== -->
+    <div
+        id="overlay"
+        class="overlay"
+        onclick="closeCart()"
+    ></div>
+
+
+    <!-- =========================
+         CART SIDEBAR
+    ========================== -->
+    <aside id="cartSidebar" class="cart-sidebar">
+
+        <div class="cart-header">
+
+            <h2>🛒 Keranjang</h2>
+
+            <button onclick="closeCart()">
+                ✕
+            </button>
+
+        </div>
+
+
+        <div id="cartItems" class="cart-items">
+
+            <div class="empty-cart">
+
+                <span>🛒</span>
+
+                <p>
+                    Keranjang masih kosong.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>Total</span>
+
+                <strong id="cartTotal">
+                    Rp0
+                </strong>
+
+            </div>
+
+            <button
+                class="checkout-btn"
+                onclick="openCheckout()"
+            >
+                Checkout Sekarang
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         CHECKOUT MODAL
+    ========================== -->
+    <div
+        id="checkoutModal"
+        class="checkout-modal"
+    >
+
+        <div class="checkout-box">
+
+            <div class="checkout-header">
+
+                <div>
+                    <p class="checkout-small">
+                        ES LILIN AA SIO
+                    </p>
+
+                    <h2>
+                        Checkout Pesanan
+                    </h2>
+                </div>
+
+                <button onclick="closeCheckout()">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <!-- RINGKASAN PESANAN -->
+            <div class="order-summary">
+
+                <h3>
+                    Ringkasan Pesanan
+                </h3>
+
+                <div id="checkoutItems"></div>
+
+                <div class="summary-row">
+
+                    <span>Subtotal</span>
+
+                    <strong id="checkoutSubtotal">
+                        Rp0
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>Ongkir</span>
+
+                    <strong id="shippingCost">
+                        Rp0
+                    </strong>
+
+                </div>
+
+                <div class="summary-row total">
+
+                    <span>Total</span>
+
+                    <strong id="checkoutTotal">
+                        Rp0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+            <form id="checkoutForm">
+
+                <div class="form-group">
+
+                    <label>
+                        Nama Pemesan
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Masukkan nama lengkap"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Nomor WhatsApp
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="Contoh: 081234567890"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Metode Pengambilan
+                    </label>
+
+                    <select
+                        id="deliveryMethod"
+                        onchange="calculateCheckout()"
+                    >
+
+                        <option value="pickup">
+                            Ambil Sendiri
+                        </option>
+
+                        <option value="delivery">
+                            Diantar (+Rp5.000)
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Alamat Pengantaran
+                    </label>
+
+                    <textarea
+                        id="customerAddress"
+                        placeholder="Masukkan alamat lengkap jika ingin diantar"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Metode Pembayaran
+                    </label>
+
+                    <select
+                        id="paymentMethod"
+                        onchange="updatePaymentInfo()"
+                    >
+
+                        <option value="cash">
+                            Tunai / COD
+                        </option>
+
+                        <option value="transfer">
+                            Transfer Bank
+                        </option>
+
+                        <option value="qris">
+                            QRIS
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    id="paymentInfo"
+                    class="payment-info"
+                >
+                    💵 Pembayaran dilakukan secara
+                    tunai saat pesanan diterima
+                    atau diambil.
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Catatan Pesanan
+                    </label>
+
+                    <textarea
+                        id="customerNote"
+                        placeholder="Tambahkan catatan jika ada..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="order-btn"
+                >
+                    📱 Pesan via WhatsApp
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         NOTIFICATION
+    ========================== -->
+    <div
+        id="notification"
+        class="notification"
+    >
+        Produk berhasil ditambahkan!
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
