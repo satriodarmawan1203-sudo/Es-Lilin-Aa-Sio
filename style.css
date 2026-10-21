@@ -117,7 +117,7 @@ header {
             rgba(70, 36, 15, 0.75),
             rgba(70, 36, 15, 0.78)
         ),
-        url("images/coklat.png");
+        url("/images/Coklat.png");
 
     background-size: cover;
     background-position: center;
